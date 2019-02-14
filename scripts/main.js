@@ -45,7 +45,7 @@ function findRoute(start, end, home, parent){
   //first we error handle if the user is trying to teleport to their end location from their start location
   if (start == end){
   	routeFound = 1;
-  	alert("you can't teleport to your same location");
+
 
   }
 
@@ -188,7 +188,10 @@ function updateScreen() {
   document.getElementById("message2").innerHTML = "Your Ending Destination Is " + numToName(endCity);
   document.getElementById("message3").innerHTML = "Your Home City Is " + numToName(homeCity);
   if(routeFound != 0){
-     document.getElementById("message4").innerHTML =  "Your Tavel Path Will Be " + finalRouteStrings + ", And Your Total Travel Time Will Be " + totalTravelTime + " Hours.";  
+     document.getElementById("message4").innerHTML =  "Your Tavel Path Will Be " + finalRouteStrings + ", And Your Total Travel Time Will Be " + totalTravelTime + " Hours."; 
+     if (totalTravelTime == 0){
+     	document.getElementById("message4").innerHTML =  "You can't teleport to your same location nor would you want to."
+     } 
   }
  
 
